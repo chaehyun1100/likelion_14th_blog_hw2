@@ -1,0 +1,9 @@
+.chip4-1:hover{
+    background: var(--beige-bg-sunken, #EFE4D2);
+}
+.postrow:hover .text1{
+    color: var(--beige-accent-hover, #C95A2C);
+}
+.searchbar:focus-within{
+    border: 1px solid var(--beige-line-strong, #B59C82);
+}

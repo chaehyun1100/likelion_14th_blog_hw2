@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ post.title }} · {{ BRAND_NAME }}{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/tech_detail.css' %}">
+<link rel="stylesheet" href="{% static 'css/tech_detail_animation.css' %}">
+{% endblock %}
+{% block content %}
+{# TODO: W1 — 본문/TOC/Meta. W2 — 댓글 섹션. #}
+<div class="container">
+    <main>
+        <div class="toclist">
+            <p class="toc-content">ON THIS PAGE</p>
+            <div class="items">
+                <p class="tocitem">1. 토큰이란</p>
+                <p class="tocitem">2. 단위 결정</p>
+                <p class="tocitem">3. 빌드 파이프라인</p>
+                <p class="tocitem">4. 마무리</p>
+            </div>
+        </div>
+        <div class="article">
+            <div class="metatop">
+                <p class="chip4">Frontend</p>
+                <p class="top-text">2026.04.28 · 8 min · series 5/8</p>
+            </div>
+            <h2>손에 익는 디자인 시스템 만들기</h2>
+            <p class="art-text1">Designing a system that fits the hand — tokens, units, and the boring middle.</p>
+            <div class="notedivider"></div>
+            <p class="art-text2">디자인 시스템을 처음 만들 때, 저는 컴포넌트부터 시작했어요. 버튼, 카드, 입력 필드. 그러다 알<br>았죠. 토큰이 없는 컴포넌트는 짐이라는 걸요.</p>
+            <h3>1. 토큰이란</h3>
+            <p class="art-text3">토큰은 디자인 결정에 이름을 붙이는 일이에요. --accent는 "주황색"이 아니라 "강조되는 무엇"을 <br>의미하죠.</p>
+            <div class="codeblock">
+                <p class="code-text">:root {<br>&nbsp;&nbsp;--accent: #E8794A;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* terracotta · primary */<br>&nbsp;&nbsp;--accent-hover: #C95A2C; /* deeper rust */<br>&nbsp;&nbsp;--bg-page: #F5EDE0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* page · soft beige */<br>}
+                </p>
+            </div>
+            <p class="art-text4">이름을 잘 붙이면, 색을 바꾸는 일이 의미를 바꾸는 일이 됩니다. 그게 시스템이에요.</p>
+            <div class="notedivider"></div>
+            <h4>comments · 4</h4>
+            <div class="signinprompt">
+                <div class="prompttext">
+                    <p class="prompttext1">댓글을 남기려면 로그인이 필요해요</p>
+                    <p class="prompttext2">Sign in to leave a note on this page.</p>
+                </div>
+                <p class="button">Sign in →</p>
+            </div>
+            <div class="commentitem">
+                <p class="avatar">JM</p>
+                <div class="body">
+                    <div class="header">
+                        <p class="header-text1">jaemin</p>
+                        <p class="header-text2">2026.04.28</p>
+                    </div>
+                    <p class="body-text">토큰 네이밍 진짜 어렵죠. semantic 레벨까지 가면 의견 갈리고요.</p>
+
+                </div>
+            </div>
+            <div class="notedivider"></div>
+            <div class="commentitem">
+                <p class="avatar">SY</p>
+                <div class="body">
+                    <div class="header">
+                        <p class="header-text1">soyun</p>
+                        <p class="header-text2">2026.04.29</p>
+                    </div>
+                    <p class="body-text">다음 편 기다릴게요. 빌드 파이프라인 부분 궁금해요.</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="metasidebar">
+            <p class="meta">META</p>
+            <div class="metalist">
+                <div class="metarow">
+                    <p class="meta-text1">author</p>
+                    <p class="meta-text2">아기사자</p>
+                </div>
+                <div class="metarow">
+                    <p class="meta-text1">edited</p>
+                    <p class="meta-text2">2026.04.29</p>
+                </div>
+                <div class="metarow">
+                    <p class="meta-text1">views</p>
+                    <p class="meta-text2">1,284</p>
+                </div>
+                <div class="metarow">
+                    <p class="meta-text1">license</p>
+                    <p class="meta-text2">CC BY 4.0</p>
+                </div>
+                <div class="notedivider2"></div>
+                <p class="share">SHARE</p>
+                <div class="sharegroup">
+                    <p class="chip5">copy ⎘</p>
+                    <p class="chip5">x</p>
+                    <p class="chip5">rss</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ BRAND_NAME }}{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/home_animation.css' %}">
+{% endblock %}
+{% block content %}
+{# TODO: W1 — 아기 사자 작성 영역 #}
+
+<div class="container">
+    <main>
+        <section class="hero">
+            <div class="inner">
+                <div class="eyebrowrow">
+                    <span class="welcome">welcome · 환영합니다</span>
+                    <span class="date">— 2026, week 18</span>
+                </div>
+                <h2>기록하는 일이<br>성장이 되는 곳<span class="dot-color">.</span></h2>
+                <p class="hero-subtext">아기사자(BL)가 매일 조금씩 적어가는 노트입니다.<br>
+                    기술, 프로젝트, 그리고 평범한 하루의 단상까지 — 천천히 쌓아 둡니다.
+                </p>
+                <div class="spacer1"></div>
+                <div class="ctas">
+                    <p class="but-primary">최신 글 읽기 →</p>
+                    <p class="but-secondary">about</p>
+                    <p class="but-secondary">RSS</p>
+                </div>
+                <div class="spacer2"></div>
+                <div class="metastrip">
+                    <div class="nowwriting">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="4" fill="#E8794A"/>
+                        </svg>
+                        <span class="nowwriting-label">now writing</span>
+                        <span class="nowwriting-title">디자인 토큰 시리즈 6편</span>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <section class="today">
+            <div class="inner">
+                <div class="header">
+                    <div class="frame">
+                        <span class="frame-number">01</span>
+                        <span class="frame-title">오늘의 노트</span>
+                    </div>
+                    <a href="{% url 'tech_list' %}" class="header-seeall">see all →</a>
+                    
+                </div>
+                <div class="grid">
+                
+                        <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="featuredpost">
+                        
+                            <div class="placeholderlmg">
+                                <p class="lmg-content">손에 익는 디자인 시스템 · cover</p>
+                            </div>
+                            <div class="content">
+                                <div class="frame">
+                                    <span class="chip1">Frontend</span>
+                                    <span class="chip2">series · 5/8</span>
+                                    <span class="date2">2026.04.28 · 8 min</span>
+                                </div>
+                                <h3>손에 익는 디자인 시스템 만들기</h3>
+                                <p class="text1">토큰을 짓는 일은 결국 이름을 짓는 일이다. 작은 결정에 이름을 붙이는 일 — 그게 시스템이다.</p>
+                                <p class="text2">이어 읽기 →</p>
+                            </div>
+                        </a>
+                        <div class="latestlist">
+                            <p class="list-title">LATEST · 최근 5편</p>
+                            <div class="spacer3"></div>
+
+                            <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="postmini">
+                                <div class="frame">
+                                    <span class="chip3">TypeScript</span>
+                                    <span class="date3">04.21</span>
+                                </div>
+                                <p class="text3">tRPC와 함께한 1년: 좋았던 것, 불편했던 것</p>
+                            </a>
+
+                            <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="postmini">
+                                <div class="frame">
+                                    <span class="chip3">Frontend</span>
+                                    <span class="date3">04.14</span>
+                                </div>
+                                <p class="text3">CSS Container Queries, 결국 쓰게 되더라</p>
+                            </a>
+
+                            <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="postmini">
+                                <div class="frame">
+                                    <span class="chip3">AI</span>
+                                    <span class="date3">04.07</span>
+                                </div>
+                                <p class="text3">Vibe coding 다음 단계 — 워크플로우 만들기</p>
+                            </a>
+
+                            <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="postmini">
+                                <div class="frame">
+                                    <span class="chip3">Performance</span>
+                                    <span class="date3">03.30</span>
+                                </div>
+                                <p class="text3">React 19 컴파일러로 useMemo를 지웠다</p>
+                            </a>
+
+                            <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="postmini">
+                                <div class="frame">
+                                    <span class="chip3">Series · DS</span>
+                                    <span class="date3">03.22</span>
+                                </div>
+                                <p class="text3">디자인 토큰을 코드로 옮기는 5가지 방법</p>
+                            </a>
+                        </div>
+                    </div>
+                
+            </div>
+        </section>
+    </main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Tech · {{ BRAND_NAME }}{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/tech_list.css' %}">
+<link rel="stylesheet" href="{% static 'css/tech_list_animation.css' %}">
+{% endblock %}
+{% block content %}
+{# TODO: W1 — 아기 사자 작성 영역 #}
+<div class="container">
+    <main>
+        <div class="inner">
+            <div class="headerrow">
+                <div class="titlestack">
+                    <p class="minititle">TECH NOTES</p>
+                    <p class="maintitle">만들면서 배운 것들.</p>
+                </div>
+                <div class="searchbar"  contenteditable="true">
+                    <span class="search">⌕</span>
+                    <p class="searchpost">search posts...</p>
+                    <p class="kbd">⌘K</p>
+                </div>
+            </div>
+            <div class="category">
+                <p class="chip4">All</p>
+                <p class="chip4-1">Frontend</p>
+                <p class="chip4-1">TypeScript</p>
+                <p class="chip4-1">AI</p>
+                <p class="chip4-1">Performance</p>
+                <p class="chip4-1">Series · DS</p>
+            </div>
+            <div class="postlist">
+                <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="postrow">
+                    <p class="date">2026.04.28</p>
+                    <div class="contentcol">
+                        <p class="text1">손에 익는 디자인 시스템 만들기</p>
+                        <p class="text2">Designing a system that fits the hand</p>
+                        <div class="tagrow">
+                            <p class="chip5">Frontend</p>
+                            <p class="chip5">#design-system</p>
+                            <p class="chip5">#tokens</p>
+                            <p class="chip5">#css</p>                            
+                            <p class="chip5-1"></p>
+                        </div>
+                    </div>
+                    <p class="min">8 min</p>
+                </a>
+                <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="postrow">                    <p class="date">2026.04.21</p>
+                    <div class="contentcol">
+                        <p class="text1">tRPC와 함께한 1년: 좋았던 것, 불편했던 것</p>
+                        <p class="text2">A year with tRPC</p>
+                        <div class="tagrow">
+                            <p class="chip5">TypeScript</p>
+                            <p class="chip5">#trpc</p>
+                            <p class="chip5">#types</p>
+                            <p class="chip5">#dx</p>                            
+                            <p class="chip5-1"></p>
+                        </div>
+                    </div>
+                    <p class="min">6 min</p>
+                </a>
+                <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="postrow">
+                    <p class="date">2026.04.14</p>
+                    <div class="contentcol">
+                        <p class="text1">CSS Container Queries, 결국 쓰게 되더라</p>
+                        <p class="text2">I came around to container queries</p>
+                        <div class="tagrow">
+                            <p class="chip5">Frontend</p>
+                            <p class="chip5">#css</p>
+                            <p class="chip5">#layout</p>
+                            <p class="chip5-1"></p>                            
+                            <p class="chip5-1"></p>
+                        </div>
+                    </div>
+                    <p class="min">5 min</p>
+                </a>
+                <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="postrow">
+                    <p class="date">2026.04.07</p>
+                    <div class="contentcol">
+                        <p class="text1">Vibe coding 다음 단계 — 워크플로우 만들기</p>
+                        <p class="text2">Beyond vibe coding</p>
+                        <div class="tagrow">
+                            <p class="chip5">AI</p>
+                            <p class="chip5">#ai</p>
+                            <p class="chip5">#workflow</p>
+                            <p class="chip5">#agents</p>                            
+                            <p class="chip5-1"></p>
+                        </div>
+                    </div>
+                    <p class="min">12 min</p>
+                </a>
+                <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="postrow">
+                    <p class="date">2026.03.30</p>
+                    <div class="contentcol">
+                        <p class="text1">React 19 컴파일러로 useMemo를 지웠다</p>
+                        <p class="text2">Removing useMemo with React 19</p>
+                        <div class="tagrow">
+                            <p class="chip5">Performance</p>
+                            <p class="chip5">#react</p>
+                            <p class="chip5">#perf</p>
+                            <p class="chip5-1"></p>                            
+                            <p class="chip5-1"></p>
+                        </div>
+                    </div>
+                    <p class="min">7 min</p>
+                </a>
+                <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="postrow">
+                    <p class="date">2026.03.22</p>
+                    <div class="contentcol">
+                        <p class="text1">디자인 토큰을 코드로 옮기는 5가지 방법</p>
+                        <p class="text2">Five ways to ship design tokens</p>
+                        <div class="tagrow">
+                            <p class="chip5">Series · DS</p>
+                            <p class="chip5">#design-system</p>
+                            <p class="chip5">#series</p>
+                            <p class="chip5">#5/8</p>                            
+                            <p class="chip5-1"></p>
+                        </div>
+                    </div>
+                    <p class="min">9 min</p>
+                </a>
+            </div>
+            <div class="rectangle"></div>
+        </div>
+    </main>
+</div>
+{% endblock %}

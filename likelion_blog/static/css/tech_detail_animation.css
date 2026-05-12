@@ -1,0 +1,13 @@
+.button:hover{
+    background: var(--beige-accent-hover, #C95A2C);
+}
+.button:active{
+    transform: scale(0.98);
+}
+.chip5:nth-child(1):hover{
+    display: inline-flex;
+    background: var(--beige-bg-sunken, #EFE4D2);
+}
+.tocitem:nth-child(2):hover{
+    color: var(--beige-accent-hover, #C95A2C);
+}

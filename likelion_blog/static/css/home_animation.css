@@ -1,0 +1,28 @@
+
+.but-secondary:hover{
+    display: inline-flex;
+    background: var(--beige-bg-sunken, #EFE4D2);
+}
+
+.but-secondary:active{
+    transform: scale(0.98);
+}
+.but-primary{
+    display: inline-flex;
+}
+.but-primary:hover{
+    background: var(--beige-accent-hover, #C95A2C);
+}
+.but-primary:active{
+    transform: scale(0.98);
+}
+.featuredpost:hover{
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-2); 
+}
+.header-seeall:hover{
+    color: var(--beige-accent-hover, #C95A2C);
+}
+.postmini:hover .text3{
+    color: var(--beige-accent-ink, #8C3A19);
+}
