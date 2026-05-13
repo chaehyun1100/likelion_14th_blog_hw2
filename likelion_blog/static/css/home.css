@@ -7,7 +7,11 @@ a{
     text-decoration-line: none;
 }
 .container{
-    width: 1280px;
+    display: flex;
+    /* width: 1280px; */
+    flex-direction: column;
+    align-items: center;
+    
     background-color: #F5EDE0;
 }
 
@@ -211,10 +215,11 @@ h2{
     flex-direction: column;
     align-items: flex-start;
     flex-shrink: 0;
+    overflow: hidden;
 
-    border-radius: 12px;
-    border: 1px solid #D9C7A8;
-    background-color: #FBF6EC;
+    border-radius: var(--radius-lg, 12px);
+    border: 1px solid var(--beige-line-default, #D9C7A8);
+    background: var(--beige-bg-paper, #FBF6EC);
 }
 .placeholderlmg{
     display: flex;
@@ -224,9 +229,10 @@ h2{
     align-items: center;
 
     border-radius: 8px;
-    border: 1px dashed #B59C82;
+    border-bottom: 1px dashed #B59C82;
     background-color: #EFE4D2;
 }
+
 .lmg-content{
     color: #8A6A55;
     font-family: "JetBrains Mono";

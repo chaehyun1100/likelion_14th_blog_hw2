@@ -8,13 +8,13 @@ a{
 }
 .container{
     display: flex;
-    width: 1280px;
+    /* width: 1280px; */
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 
     background: var(--beige-bg-page, #F5EDE0);
 }
-main{
+.box{
     display: flex;
     padding: 56px 96px;
     flex-direction: column;

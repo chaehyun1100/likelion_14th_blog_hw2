@@ -5,14 +5,14 @@
 }
 .container{
     display: flex;
-width: 1280px;
-flex-direction: column;
-align-items: flex-start;
+    /* width: 1280px; */
+    flex-direction: column;
+    align-items: center;
 
-background: var(--beige-bg-page, #F5EDE0);
+    background: var(--beige-bg-page, #F5EDE0);
 }
 
-main{
+.box{
     display: flex;
     padding: 64px;
     justify-content: center;
@@ -26,6 +26,7 @@ main{
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
+    flex-shrink: 0;
 }
 .toc-content{
     color: var(--beige-ink-3, #8A6A55);
@@ -360,6 +361,7 @@ h4{
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
+    flex-shrink: 0;
 }
 .meta{
     color: var(--beige-ink-3, #8A6A55);
