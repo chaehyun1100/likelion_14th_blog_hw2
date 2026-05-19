@@ -5,9 +5,9 @@ blog/models.py
 어떤 데이터 구조로 정의되어 있는지 참고하면 됩니다.
 
 template에서 접근 방식 예시:
-  {{ post.title }}              # 단순 필드
-  {{ post.category.label }}     # ForeignKey 관계 (Category 객체 → label 필드)
-  {% for tag in post.tags.all %}  # ManyToMany 관계
+    {{ post.title }}              # 단순 필드
+    {{ post.category.label }}     # ForeignKey 관계 (Category 객체 → label 필드)
+    {% for tag in post.tags.all %}  # ManyToMany 관계
 """
 from django.conf import settings
 from django.db import models

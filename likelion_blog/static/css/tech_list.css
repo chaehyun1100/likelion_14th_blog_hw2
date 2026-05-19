@@ -246,6 +246,9 @@ a{
     font-weight: 500;
     line-height: 100%; /* 12px */
     letter-spacing: 0.24px;
+
+    color: var(--beige-ink-2, #5B3A28);
+    border: 1px solid var(--beige-line-strong, #B59C82);
 }
 
 .tagrow .chip5:nth-child(1){
@@ -257,8 +260,7 @@ a{
 .tagrow .chip5:nth-child(4),
 .tagrow .chip5:nth-child(5),
 .tagrow .chip5:nth-child(6){
-    color: var(--beige-ink-2, #5B3A28);
-    border: 1px solid var(--beige-line-strong, #B59C82);
+    
 }
 
 .min{

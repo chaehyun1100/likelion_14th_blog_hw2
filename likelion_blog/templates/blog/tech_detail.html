@@ -13,28 +13,45 @@
         <div class="toclist">
             <p class="toc-content">ON THIS PAGE</p>
             <div class="items">
-                <p class="tocitem">1. 토큰이란</p>
-                <p class="tocitem">2. 단위 결정</p>
-                <p class="tocitem">3. 빌드 파이프라인</p>
-                <p class="tocitem">4. 마무리</p>
+                {% for section in sections %}
+                    {% if section.kind == 'h2' %}
+                    <h2 class="tocitem">{{ section.anchor|slice:"4:" }}. {{section.text}}</h2>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
+        
         <div class="article">
             <div class="metatop">
-                <p class="chip4">Frontend</p>
-                <p class="top-text">2026.04.28 · 8 min · series 5/8</p>
+                <p class="chip4">{{post.category.label}}</p>
+                <p class="top-text">{{post.published_at|date:'Y.m.d'}} · {{post.read_minutes}} min · {{post.series_label}}</p>
             </div>
-            <h2>손에 익는 디자인 시스템 만들기</h2>
+            <h2 class="title1">{{post.title}}</h2>
             <p class="art-text1">Designing a system that fits the hand — tokens, units, and the boring middle.</p>
             <div class="notedivider"></div>
-            <p class="art-text2">디자인 시스템을 처음 만들 때, 저는 컴포넌트부터 시작했어요. 버튼, 카드, 입력 필드. 그러다 알<br>았죠. 토큰이 없는 컴포넌트는 짐이라는 걸요.</p>
-            <h3>1. 토큰이란</h3>
-            <p class="art-text3">토큰은 디자인 결정에 이름을 붙이는 일이에요. --accent는 "주황색"이 아니라 "강조되는 무엇"을 <br>의미하죠.</p>
-            <div class="codeblock">
-                <p class="code-text">:root {<br>&nbsp;&nbsp;--accent: #E8794A;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* terracotta · primary */<br>&nbsp;&nbsp;--accent-hover: #C95A2C; /* deeper rust */<br>&nbsp;&nbsp;--bg-page: #F5EDE0;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* page · soft beige */<br>}
-                </p>
-            </div>
-            <p class="art-text4">이름을 잘 붙이면, 색을 바꾸는 일이 의미를 바꾸는 일이 됩니다. 그게 시스템이에요.</p>
+            {% for section in sections %}
+                {% if section.anchor == 'sec-2' or section.anchor == 'sec-3' or section.anchor == 'sec-4' %}
+
+                {% elif not section.anchor and forloop.counter > 5 %}
+                {% else %}
+                    {% if section.kind == 'p' %}
+                        {% if forloop.counter == 5 %}
+                            <p class="art-text4">{{ section.text }}</p>
+                        {% else %}
+                            <p class="art-text2">{{ section.text }}</p>
+                        {% endif %}
+                    {% elif section.kind == 'h2' %}
+                        <h2 class="tocitem1">{{ section.anchor|slice:"4:" }}. {{section.text}}</h2>
+                    
+                    {% elif section.kind == 'code' %}
+                        <div class="codeblock">
+                        <code class="code-text">{{section.text|linebreaksbr}}</code>
+                        </div>
+                    
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+            
             <div class="notedivider"></div>
             <h4>comments · 4</h4>
             <div class="signinprompt">
@@ -77,15 +94,15 @@
                 </div>
                 <div class="metarow">
                     <p class="meta-text1">edited</p>
-                    <p class="meta-text2">2026.04.29</p>
+                    <p class="meta-text2">{{post.edited_at|date:'Y.m.d'}}</p>
                 </div>
                 <div class="metarow">
                     <p class="meta-text1">views</p>
-                    <p class="meta-text2">1,284</p>
+                    <p class="meta-text2">{{post.views}}</p>
                 </div>
                 <div class="metarow">
                     <p class="meta-text1">license</p>
-                    <p class="meta-text2">CC BY 4.0</p>
+                    <p class="meta-text2">{{post.license}}</p>
                 </div>
                 <div class="notedivider2"></div>
                 <p class="share">SHARE</p>
