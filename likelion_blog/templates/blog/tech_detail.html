@@ -27,7 +27,7 @@
                 <p class="top-text">{{post.published_at|date:'Y.m.d'}} · {{post.read_minutes}} min · {{post.series_label}}</p>
             </div>
             <h2 class="title1">{{post.title}}</h2>
-            <p class="art-text1">Designing a system that fits the hand — tokens, units, and the boring middle.</p>
+            <p class="art-text1">{{post.subtitle}}</p>
             <div class="notedivider"></div>
             {% for section in sections %}
                 {% if section.anchor == 'sec-2' or section.anchor == 'sec-3' or section.anchor == 'sec-4' %}
