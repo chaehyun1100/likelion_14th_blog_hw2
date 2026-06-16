@@ -61,7 +61,7 @@
             {% csrf_token %}
             {% if user.is_authenticated %}
                 <div class="signinprompt">
-                    <p class="avatar">{{user.first_name|slice:":2"|upper}}</p>
+                    <p class="avatar">{{user.first_name|slice:":2"|upper }}</p>
                     <div class="prompttext">
                         <p class="prompttext1">{{user.first_name}}</p>
                         <textarea
