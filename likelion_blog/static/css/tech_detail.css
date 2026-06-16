@@ -277,6 +277,7 @@ form{
 }
 .button{
     border: none;
+    text-decoration: none;
     display: flex;
     padding: 10px 16px;
     align-items: flex-start;

@@ -55,23 +55,24 @@
             <div class="notedivider"></div>
             <h4>comments · 4</h4>
             <form 
-            action=""
+            action="{% url 'comment_submit' post.slug %}"
             method="POST"
             >
+            {% csrf_token %}
             {% if user.is_authenticated %}
                 <div class="signinprompt">
-                    <p class="avatar">BL</p>
+                    <p class="avatar">{{user.first_name|slice:":2"|upper}}</p>
                     <div class="prompttext">
                         <p class="prompttext1">{{user.first_name}}</p>
                         <textarea
                         id="content"
-                        name="content"
+                        name="body"
                         placeholder="댓글을 남겨주세요…"
                         required
                         ></textarea>
                         <!-- <p class="prompttext2">댓글을 남겨주세요…</p> -->
                     </div>
-                    <p class="button">post →</p>
+                    <button type="submit" class="button">post →</p>
                 </div>
                 
             {% else %}
@@ -80,34 +81,25 @@
                         <p class="prompttext1">댓글을 남기려면 로그인이 필요해요</p>
                         <p class="prompttext2">Sign in to leave a note on this page.</p>
                     </div>
-                    <button type="submit" class="button">Sign in →</p>
+                    <a href="{% url 'login' %}" class="button">Sign in →</a>
                 </div>
             {% endif %}
             </form>
+            
+            {% for comment in comments %}
             <div class="commentitem">
-                <p class="avatar">JM</p>
+                <p class="avatar">{{comment.author_name|slice:":2"|upper}}</p>
                 <div class="body">
                     <div class="header">
-                        <p class="header-text1">jaemin</p>
-                        <p class="header-text2">2026.04.28</p>
+                        <p class="header-text1">{{comment.author_name}}</p>
+                        <p class="header-text2">{{comment.created_at|date:'Y.m.d'}}</p>
                     </div>
-                    <p class="body-text">토큰 네이밍 진짜 어렵죠. semantic 레벨까지 가면 의견 갈리고요.</p>
+                    <p class="body-text">{{comment.body}}</p>
 
                 </div>
             </div>
             <div class="notedivider"></div>
-            <div class="commentitem">
-                <p class="avatar">SY</p>
-                <div class="body">
-                    <div class="header">
-                        <p class="header-text1">soyun</p>
-                        <p class="header-text2">2026.04.29</p>
-                    </div>
-                    <p class="body-text">다음 편 기다릴게요. 빌드 파이프라인 부분 궁금해요.</p>
-
-                </div>
-            </div>
-            
+            {% endfor %}
         </div>
         <div class="metasidebar">
             <p class="meta">META</p>

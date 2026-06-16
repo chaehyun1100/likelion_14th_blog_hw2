@@ -1,5 +1,6 @@
 .button:hover{
     background: var(--beige-accent-hover, #C95A2C);
+    color: #FBF6EC !important;
 }
 .button:active{
     transform: scale(0.98);
