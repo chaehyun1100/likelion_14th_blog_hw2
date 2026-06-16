@@ -1,7 +1,87 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}로그인 · {{ BRAND_NAME }}{% endblock %}
-
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/login_signup.css' %}">
+<link rel="stylesheet" href="{% static 'css/login_signup_animation.css' %}">
+{% endblock %}
 {% block content %}
 {# TODO: W3 — 아기 사자 작성 영역 #}
+<div class="container">
+    <div class="card">
+        <div class="header">
+            <p class="login">LOGIN · 로그인</p>
+            <h2 class="login-title">다시 오셨네요.</h2>
+            <p class="login-eng">Welcome back. Sign in to leave notes and comments.</p>
+
+        </div>
+        <div class="notedivider">
+            <div class="line"></div>
+        </div>
+    
+        <div class="form">
+            <div class="body">
+            <!-- <div class="textfield">
+                <p class="box-name">ID</p>
+                <div class="box">
+                    <p class="box-text">babyLion</p>
+                </div>
+            </div> -->
+            <form action="{% url 'login' %}" method="POST" class="form-box">
+            {% csrf_token %}
+            <div class="textfield">
+                <label for="login-username">ID</label>
+                <input
+                id="login-username"
+                type="text"
+                name="username"
+                placeholder="babyLion"
+                required
+                >
+            </div>
+            <div class="textfield">
+                <label for="login-password">PASSWORD</label>
+                <input
+                id="login-password"
+                type="password"
+                name="password"
+                placeholder="••••••••"
+                required
+                >
+            </div>
+            
+            <!-- <div class="textfield">
+                <p class="box-name">PASSWORD</p>
+                <div class="box">
+                    <p class="box-text">••••••••</p>
+                </div>
+            </div> -->
+            <div class="forgotrow">
+                <p class="forgot">forgot password?</p>
+            </div>
+            <div class="rememberrow">
+                <div class="checkbox">
+                    <input 
+                    type="checkbox" 
+                    id="signup-agree" 
+                    name="agree"
+                    required
+                    >
+                    <!-- <p class="check">✓</p> -->
+                </div>
+                <p class="remember">Remember me on this paper</p>
+            </div>
+            </div>
+            <button type="submit" class="signin">
+                <p class="signin-text">Sign in →</p>
+            </button>
+            </form>
+        </div>
+        <div class="login-footer">
+            <span class="first">처음이신가요?</span>&nbsp;
+            <a href= "{% url 'signup' %}" class="create">Create an account</a>
+        </div>
+    </div>
+</div>
 {% endblock %}

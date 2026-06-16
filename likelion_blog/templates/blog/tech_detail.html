@@ -54,13 +54,36 @@
             
             <div class="notedivider"></div>
             <h4>comments · 4</h4>
-            <div class="signinprompt">
-                <div class="prompttext">
-                    <p class="prompttext1">댓글을 남기려면 로그인이 필요해요</p>
-                    <p class="prompttext2">Sign in to leave a note on this page.</p>
+            <form 
+            action=""
+            method="POST"
+            >
+            {% if user.is_authenticated %}
+                <div class="signinprompt">
+                    <p class="avatar">BL</p>
+                    <div class="prompttext">
+                        <p class="prompttext1">{{user.first_name}}</p>
+                        <textarea
+                        id="content"
+                        name="content"
+                        placeholder="댓글을 남겨주세요…"
+                        required
+                        ></textarea>
+                        <!-- <p class="prompttext2">댓글을 남겨주세요…</p> -->
+                    </div>
+                    <p class="button">post →</p>
                 </div>
-                <p class="button">Sign in →</p>
-            </div>
+                
+            {% else %}
+                <div class="signinprompt">
+                    <div class="prompttext">
+                        <p class="prompttext1">댓글을 남기려면 로그인이 필요해요</p>
+                        <p class="prompttext2">Sign in to leave a note on this page.</p>
+                    </div>
+                    <button type="submit" class="button">Sign in →</p>
+                </div>
+            {% endif %}
+            </form>
             <div class="commentitem">
                 <p class="avatar">JM</p>
                 <div class="body">
@@ -84,6 +107,7 @@
 
                 </div>
             </div>
+            
         </div>
         <div class="metasidebar">
             <p class="meta">META</p>

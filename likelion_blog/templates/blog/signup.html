@@ -1,7 +1,100 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}회원가입 · {{ BRAND_NAME }}{% endblock %}
-
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/login_signup.css' %}">
+{% endblock %}
 {% block content %}
 {# TODO: W3 — 아기 사자 작성 영역 #}
+<div class="container">
+    <div class="card">
+        <div class="header">
+            <p class="login">SIGN UP · 회원가입</p>
+            <h2 class="login-title">처음 오셨네요<span class="dot">.</span></h2>
+            <p class="login-eng">Make a paper to leave notes, save posts, and join <br>the conversation.</p>
+
+        </div>
+        <div class="notedivider">
+            <div class="line"></div>
+        </div>
+        <div class="form">
+            <div class="body">
+            <form action="{% url 'signup' %}" method="POST" class="form-box">
+            {% csrf_token %}
+            <div class="textfield">
+                <label for="signup-name">NAME · 이름</label>
+                <input
+                id="signup-name"
+                type="text"
+                name="first_name"
+                placeholder="Like Lion"
+                required
+                >
+            </div>
+            <div class="textfield">
+                <label for="signup-username">ID</label>
+                <input
+                id="signup-username"
+                type="text"
+                name="username"
+                placeholder="babyLion"
+                required
+                >
+            </div>
+            <div class="textfield">
+                <label for="signup-password">PASSWORD</label>
+                <input
+                id="signup-password"
+                type="password"
+                name="password"
+                placeholder="8자 이상, 영문/숫자 포함"
+                required
+                >
+            </div>
+            
+            <!-- <div class="textfield">
+                <p class="box-name">NAME · 이름</p>
+                <div class="box">
+                    <p class="box-text">Like Lion</p>
+                </div>
+            </div>
+            <div class="textfield">
+                <p class="box-name">ID</p>
+                <div class="box">
+                    <p class="box-text">babyLion</p>
+                </div>
+            </div>
+            <div class="textfield">
+                <p class="box-name">PASSWORD</p>
+                <div class="box">
+                    <p class="box-text">8자 이상, 영문/숫자 포함</p>
+                </div>
+            </div> -->
+    
+            <div class="rememberrow">
+                <div class="checkbox">
+                    <input 
+                    type="checkbox" 
+                    id="signup-agree" 
+                    name="agree"
+                    required
+                    >
+                    <!-- <p class="check">✓</p> -->
+                </div>
+                <p class="remember"><span class="import">이용약관</span>과 <span class="import">개인정보 처리방침</span>에 동의합니다.<br>
+I agree to the <span class="import">Terms</span> and <span class="import">Privacy Policy</span>.</p>
+            </div>
+            </div>
+            <button type="submit" class="signin">
+                <p class="signin-text">Create account →</p>
+            </button>
+            </form>
+        </div>
+        <div class="login-footer">
+            <span class="first">이미 계정이 있으신가요?</span>&nbsp;
+            <a href="{% url 'login' %}" class="create">Sign in</a>
+        </div>
+    </div>
+</div>
 {% endblock %}

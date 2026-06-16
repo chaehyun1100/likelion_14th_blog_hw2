@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.create:hover{
+    color: var(--beige-accent-default, #E8794A);
+}
+.forgot:hover{
+    color: var(--beige-accent-hover, #C95A2C);
+}
+.textfield input:focus{
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid var(--beige-accent-default, #E8794A);
+    background: var(--beige-bg-page, #F5EDE0);
+}
